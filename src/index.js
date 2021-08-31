@@ -8,16 +8,19 @@ const confirmButton = document.querySelector('#confirmButton');
 const cancelButton = document.querySelector('#cancelButton');
 
 // B- MESSAGES
-const successMessage = null
-const failureMessage = null
+const successMessage = document.querySelector('.success');
+const failureMessage = document.querySelector('.failure');
 
 // C- MODAL
-const modal = null
+const modal = document.querySelector('.modal');
 
 
 // 👉 TASK 2- Demo handling click events on button#launchButton, using:
 //  A- HTML inside index.html
 //  B- The DOM's element.onclick attribute
+launchButton.onclick = function() {
+    console.log('Only one onclick per element');
+}
 //  C- element.addEventListener('click', callback)
 
 
