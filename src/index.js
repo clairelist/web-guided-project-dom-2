@@ -22,11 +22,27 @@ launchButton.onclick = function() {
     console.log('Only one onclick per element');
 }
 //  C- element.addEventListener('click', callback)
+launchButton.addEventListener('click', function(event) {
+    console.log('But we can have more than one!!!');
+    console.log(event.target.nodeName);
+})
 
+document.addEventListener('click', function(event) {
+    if (event.target === launchButton) {
+        console.log('You clicked the launch button!');
+    } else {
+        console.log('Not sure where you clicked, bud...');
+    }
+})
 
 // 👉 TASK 3- Create a function that launches!
 // It should open the confirmation modal.
 // Add it as an event listener for click events on the launch button.
+function launch(event) {
+    modal.classList.remove('off');
+}
+
+launchButton.addEventListener('click', launch);
 
 
 // 👉 TASK 4- Create a function to confirm the launch.
