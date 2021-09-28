@@ -37,16 +37,38 @@ launchButton.addEventListener('click', function(event){
 // It should open the confirmation modal.
 // Add it as an event listener for click events on the launch button.
 
+//function declaration ie name() {}; func expression ie var name = function();
+//dif is declared functions are hoisted; func expressions are not! (recall from func intrducy)
+
+function launch(event){
+    modal.classList.remove('off');
+};
+
+launchButton.addEventListener('click',launch);
 
 // 👉 TASK 4- Create a function to confirm the launch.
 // It should close the modal and display a success report.
 // Add it as a listener for clicks on the confirmation button.
 
 
+//write 'confirm' function
+
+function confirm(event){
+    successMessage.classList.remove('off'); //remove 'off' state from success msg
+    modal.classList.add('off'); //add back 'off' state to modal, above^
+}
+
+confirmButton.addEventListener('click', confirm); //runs confirm on 'click'.
+
 // 👉 TASK 5- Create a function to cancel the launch.
 // It should close the modal and display a failure report.
 // Add it as a listener for clicks on the cancellation button.
 
+function cancel(event){
+    failureMessage.classList.remove('off');
+    modal.classList.add('off'); //add back 'off' state to modal, above^
+}
+cancelButton.addEventListener('click',cancel);
 
 // 👉 TASK 6- Create a function that closes the modal if
 // the user hits the Escape key on their keyboard.
