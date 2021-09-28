@@ -101,6 +101,8 @@ Array.from(document.links).forEach(link => {
 // 👉 TASK 7- Add to ALL ELEMENTS ON THE PAGE an event listener for click events.
 // It should console.log the target 🎯 of the event.
 // It should also console.log the CURRENT target 🧭 of the event.
+// ! WE ARE DEPRECATING THIS INFO; REF OUTSIDE DOCUMENTATION FOR IF YOU WANT TO LEARN THIS OUTSIDE LAMBDA!
+
 // ! WE ARE DEPRECATING THIS; ONLY REFERENCE BELOW NOTES::
 
 // Play with stopPropagation and stopImmediatePropagation.
