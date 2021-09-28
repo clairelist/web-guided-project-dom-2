@@ -42,7 +42,10 @@ launchButton.addEventListener('click', function(event){
 
 function launch(event){
     modal.classList.remove('off');
+    successMessage.classList.add('off');
+    failureMessage.classList.add('off');
 };
+//adding back to those classlists fixes bug where they would persist after clicking!
 
 launchButton.addEventListener('click',launch);
 
@@ -68,12 +71,22 @@ function cancel(event){
     failureMessage.classList.remove('off');
     modal.classList.add('off'); //add back 'off' state to modal, above^
 }
-cancelButton.addEventListener('click',cancel);
+cancelButton.addEventListener('click',cancel); //runs cancel on 'click'.
 
 // 👉 TASK 6- Create a function that closes the modal if
 // the user hits the Escape key on their keyboard.
 // Add it as an event listener for 'keydown' events on document.
 
+//NOTE THAT event.key vals taht can be set are literal names of the keys! please
+//grep docs for more info! For now, let's use 'Escape'::
+
+function escapeMod(event){ //called so because we are 'escaping' the 'modal' get it
+    if(event.key==='Escape'){
+        modal.classList.add('off');
+    }
+}
+
+document.addEventListener('keydown',escapeMod);
 
 // 👉 TASK 7- Add to ALL ELEMENTS ON THE PAGE an event listener for click events.
 // It should console.log the target 🎯 of the event.
