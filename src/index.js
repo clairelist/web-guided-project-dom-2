@@ -88,10 +88,30 @@ function escapeMod(event){ //called so because we are 'escaping' the 'modal' get
 
 document.addEventListener('keydown',escapeMod);
 
+//PREVENTY DEFAULT!
+//we can 'prevent the default behaviour' of something and do something else if we want
+//for forEach to work must make these links an array
+
+Array.from(document.links).forEach(link => { 
+    link.addEventListener('click',function(event){
+        event.preventDefault(); //this will prevent user from clicking our links and going to their target!
+    });
+});
+
 // 👉 TASK 7- Add to ALL ELEMENTS ON THE PAGE an event listener for click events.
 // It should console.log the target 🎯 of the event.
 // It should also console.log the CURRENT target 🧭 of the event.
+// ! WE ARE DEPRECATING THIS; ONLY REFERENCE BELOW NOTES::
+
 // Play with stopPropagation and stopImmediatePropagation.
+//if we want events to stop ie after firing a single event...
+
+modal.addEventListener('click', function(event){
+    console.log('look at me now dad no propagation!');
+    event.stopPropagation();
+})
+
+//in our code, this prevents previous console logs from running, above^^
 
 
 // 👉 TASK 8- [STRETCH] Create helper functions to make the code
